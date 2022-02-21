@@ -1,0 +1,12 @@
+[rancher-control-cluster-master]
+v0003816.prod.bund.drv
+
+[rancher-control-cluster-worker]
+v0003817.prod.bund.drv
+v0003818.prod.bund.drv
+
+[kubernetes_master]
+# NONE
+
+[kubernetes_worker]
+# NONE

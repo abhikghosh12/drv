@@ -21,12 +21,7 @@
 
 # Render the Rancher template for Rancher Installation
 - name: Template helm chart
-  local_action: "shell podman run --privileged --rm -v $(pwd):/apps -w /apps \
-    -v {{role_path}}/tmp/kube/.kube:/root/.kube -v ~/.helm:/root/.helm -v ~/.config/helm:/root/.config/helm \
-    -v ~/.cache/helm:/root/.cache/helm \
-    -v {{playbook_dir}}:{{playbook_dir}} \
-    -v {{role_path}}:{{role_path}} \
-    alpine/k8s:1.20.7 helm template rancher {{playbook_dir}}/installation_files/rancher/rancher-{{ rancher_installation_chart_version }}.tgz --output-dir {{ role_path }}/tmp/helm \
+  local_action: "shell helm template rancher {{playbook_dir}}/installation_files/rancher/rancher-{{ rancher_installation_chart_version }}.tgz --output-dir {{ role_path }}/tmp/helm \
   --no-hooks \
   --namespace cattle-system \
   --set hostname={{ rancher_url }} \

@@ -1,0 +1,9 @@
+
+[kubernetes_master]
+v0003825.prod.bund.drv
+v0003826.prod.bund.drv
+v0003827.prod.bund.drv
+
+[kubernetes_worker]
+v0003808.prod.bund.drv
+v0003809.prod.bund.drv

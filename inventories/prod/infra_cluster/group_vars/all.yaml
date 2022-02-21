@@ -1,12 +1,12 @@
-cluster_name: local-prod
+cluster_name: infra-prod
 bootstrap_registry_url: v0003830.prod.bund.drv:5001
 cluster_token: !vault |
           $ANSIBLE_VAULT;1.1;AES256
-          31363936363333653533323434313666393264616237666163383866396233353563353562313830
-          3163653361306462363430653334613036656461623463640a383063633566396533633961616436
-          38316431326232386333353439346361373362303335333435323133613338316362383363346564
-          6537643766383938310a663539383032613138326236326665343537353762376638356566633332
-          35613863363533316631633333353731636335663662363037663134626336616535
+          64303362663235353835303166636164303861373462623734653439376438356465616162376236
+          3764396637343432393066646138363630386635303835360a646662323332343438336136306366
+          31316163613635343332306537393865653432633632363938323263633065303933663331373862
+          6338633130303564630a343330323765336632356662633764366665373630303266356335653235
+          30336433626266393261663766333937613237386132303466643364386435613861
 
 #K3S
 k3s_installation_files_path: /var/lib/k3s_installation_files
@@ -14,7 +14,7 @@ k3s_installation_path: /var/lib
 k3s_installation_binary_version: v1.21.7
 k3s_selinux_rpm_version: 0.5-1.el7
 primary_master_node_k3s_port: 6443
-primary_master_node: v0003816.prod.bund.drv
+primary_master_node: v0003825.prod.bund.drv
 
 #K3S Backup Configuration
 k3s_etcd_backup_enabled: true
@@ -36,13 +36,9 @@ k3s_backup_etcd_s3_secret_key: !vault |
           6435386162623966343430616162643965623735613039313138
 
 #Rancher
-rancher_installation_chart_version: 2.6.3
-rancher_installation_image_version: 2.6.3
 rancher_selinux_rpm_version: 0.2-1.el7
-rancher_url: rancher.prod.bund.drv
 
 # Certificates
 root_ca: "{{playbook_dir}}/crts/ca2018.crt"
 root_ca_additional: "{{playbook_dir}}/crts/ca2019.crt"
-tls_rancher_ingress_cert: "{{playbook_dir}}/crts/rancher.prod.bund.drv.crt"
-tls_rancher_ingress_key: "{{playbook_dir}}/crts/rancher.prod.bund.drv.key"
+
